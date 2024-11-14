@@ -54,7 +54,7 @@ const ProductList = ({ products, addToCart }) => {
 
   return (
     <div className="mx-auto p-4 w-fit">
-      <h1 className="text-3xl font-bold mb-4 text-center">ze bluetooth devays is connecteduh esuksessfullayh</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">Shopping Cart</h1>
 
       <Link
         to="/cart"
