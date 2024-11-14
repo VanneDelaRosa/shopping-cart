@@ -1,6 +1,6 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './App.css';
 
 function Cart({ cart }) {
   const navigate = useNavigate();
@@ -16,11 +16,18 @@ function Cart({ cart }) {
         {cart.map((item) => (
           <li
             key={item.id}
-            className="flex justify-between p-3 border rounded bg-gray-50 bg-opacity-4"
+            className="flex justify-between p-3 border rounded bg-gray-50"
           >
-            <span className="text-black">
-              {item.title} - ${item.price} x {item.quantity}
-            </span>
+            <div className="flex items-center">
+              <img
+                src={item.images[0]} // Make sure this points to the correct image URL
+                alt={item.title}
+                className="w-20 h-20 object-cover mr-4"  // Adjust image size as needed
+              />
+              <span className="text-black">
+                {item.title} - ${item.price} x {item.quantity}
+              </span>
+            </div>
           </li>
         ))}
       </ul>

@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
+import './App.css';
 
-function ProductList({ addToCart }) {
-  const [products, setProducts] = useState([]);
+const ProductList = ({ products, addToCart }) => {
   const [filter, setFilter] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -56,7 +54,7 @@ function ProductList({ addToCart }) {
 
   return (
     <div className="mx-auto p-4 w-fit">
-      <h1 className="text-3xl font-bold mb-4 text-center">Product List</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">ze bluetooth devays is connecteduh esuksessfullayh</h1>
 
       <Link
         to="/cart"
@@ -67,10 +65,10 @@ function ProductList({ addToCart }) {
 
       <input
         type="text"
+        className="search-bar border border-gray-300 rounded px-3 py-1 mb-4 w-full"
         placeholder="Filter by name or price"
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="border border-gray-300 rounded px-3 py-1 mb-4 w-full "
       />
 
       {filteredProducts.length === 0 ? (
@@ -97,13 +95,13 @@ function ProductList({ addToCart }) {
               <div className="flex justify-between mt-2">
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="bg-red-500 text-white text-sm px-2 py-1 rounded hover:bg-blue-600"
+                  className="add-to-cart-button"
                 >
                   Add to Cart
                 </button>
                 <button
                   onClick={() => handleViewDetails(product)}
-                  className="bg-gray-500 text-white text-sm px-2 py-1 rounded hover:bg-gray-600"
+                  className="view-item-button"
                 >
                   View Details
                 </button>
@@ -141,7 +139,7 @@ function ProductList({ addToCart }) {
               <button
                 onClick={handlePrevImage}
                 disabled={currentImageIndex === 0}
-                className={`absolute top-1/2 left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded-l`}
+                className="absolute top-1/2 left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded-l"
               >
                 Prev
               </button>
@@ -151,7 +149,7 @@ function ProductList({ addToCart }) {
                 disabled={
                   currentImageIndex === selectedProduct.images.length - 1
                 }
-                className={`absolute top-1/2 right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded-r `}
+                className="absolute top-1/2 right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded-r"
               >
                 Next
               </button>

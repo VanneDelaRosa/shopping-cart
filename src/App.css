@@ -18,6 +18,70 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.add-to-cart-button {
+  background-color: #e999c1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.view-item-button {
+  background-color: #000000b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: #b55689;
+}
+
+.view-item-button:hover {
+  background-color: #000000;
+}
+
+.checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkout-item .item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.search-bar {
+  background-color: black;
+  color: white;
+  border: 1px solid #444; 
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.search-bar::placeholder {
+  color: #ccc;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

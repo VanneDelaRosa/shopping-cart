@@ -1,8 +1,8 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './App.css';
 
-function Checkout({ cart, resetCart }) {
+const Checkout = ({ cart, resetCart }) => {
   const navigate = useNavigate();
   const totalAmount = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -16,14 +16,19 @@ function Checkout({ cart, resetCart }) {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="checkout-container">
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
       <ul className="space-y-2">
         {cart.map((item) => (
           <li
             key={item.id}
-            className="flex justify-between p-3 border rounded bg-gray-50"
+            className="checkout-item flex justify-between items-center p-3 border rounded bg-gray-50"
           >
+            <img
+              src={item.images[0]} // Ensure this is the correct property
+              alt={item.title}
+              className="w-20 h-20 object-cover mr-4"  // Adjust image size as needed
+            />
             <span className="text-black">
               {item.title} - ${item.price} x {item.quantity}
             </span>
@@ -49,6 +54,6 @@ function Checkout({ cart, resetCart }) {
       </div>
     </div>
   );
-}
+};
 
 export default Checkout;
